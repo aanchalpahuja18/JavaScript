@@ -9,6 +9,8 @@ let accountDetails;
 
 console.log(accountId);
 
+//console.table - The table() method writes a table to the console. table() static method displays tabular data as a table
+
 console.table([accountId, accountCity, accountEmail, accountState, accountDetails])
 
 
