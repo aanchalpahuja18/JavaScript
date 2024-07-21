@@ -21,4 +21,6 @@ because of issue in block scope and functional scope
 Use let & const in modern JS
 let allows for block scope & functional scope
 
+Problem with function scope- As a programmer, Sometimes, we need to access the information within the normal block only but the problem with Var is, It is accessible throughout the function level means outside of the normal block. That's why we prefer not to use Var as It could give us the undesired result.
+
 */
