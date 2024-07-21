@@ -17,7 +17,7 @@ console.table([accountId, accountCity, accountEmail, accountState, accountDetail
 /*
 Summary : const is used to declare and initialize constant variables.
 Prefer not to use var
-because of issue in block scope and functional scope
+because of issue in block scope and functional scope & it would be accessible throughout the function so any change would be reflected in the entire part wherever the variable declared with var is used.
 Use let & const in modern JS
 let allows for block scope & functional scope
 
