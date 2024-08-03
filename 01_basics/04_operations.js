@@ -20,6 +20,8 @@ let str3 = str1 + str2
 // console.log("1" + 2 + 2); // output => 122
 // console.log(1 + 2 + "2"); // output => 32
 
+//Agar string 1st hai to sbhi ko string ki tarah treat kiya jaega & if string is at the last to pehle baki operations hoge & after that the string will be appended to the result.
+
 // console.log( (3 + 4) * 5 % 3);
 
 // console.log(+true); // outout => conversion into number = 1
