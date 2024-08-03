@@ -25,5 +25,5 @@ let state;
 
 // object
 
-console.log(typeof undefined); // undefined - is a type itself
-console.log(typeof null); // object - null is a object
+console.log(typeof undefined); // output => undefined - is a type itself
+console.log(typeof null); // output => object - null is a object
