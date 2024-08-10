@@ -46,8 +46,8 @@ console.log(newDate.getFullYear());
 
 //Customization of dates further with the help of toLocaleString
 
-newDate.toLocaleString('default', {
-    weekday: "long",
-    timeZone: 
-})
+// newDate.toLocaleString('default', {
+//     weekday: "long",
+//     timeZone: 
+// })
 
