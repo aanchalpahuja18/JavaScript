@@ -1,0 +1,52 @@
+JS execution context means how will JS execute the code.
+It does this by breaking our code into 2 parts.
+
+Whenever we will give our code file into JS Global Execution Context (GEC) will be created first
+this variable refers to the GEC & this refers to Window object in Browser
+
+Types of EC:
+1. Global EC
+2. Functional EC
+3. Eval EC (In Mongoose)
+
+JS code is executed in 2 phases:
+1. Memory Execution phase: In this phase only the memory is allocated to variables & functions & they are not executed.
+2. Execution phase: Here actual execution of the code takes place
+
+eg: code
+
+let val1 = 20
+let val2 = 30
+function addNum(num1, num2){
+    let total = num1 + num2;
+    return total;
+}
+let result1 = addNum(3,4)
+let result2 = addNum(val1, val2)
+How does JS execute code?
+
+1. A global execution context will be created which is referred with this
+2. Memory Creation Phase is created in which all the variables & functions are allocated memory:
+val1 -> undefined
+val2 -> undefined
+addNum -> function definition
+result1 -> undefined
+result2 -> undefined
+
+3. Execution Phase:
+val1 -> 20
+val2 -> 30
+addNum -> A separate execution context will be created inside which all the above 2 phases will be repeated & it happens as many times as a function is called. 
+//After the execution context is created it gets deleted as soon as the function is executed successfully
+
+//Call Stack follows a concept of LIFO! which simply means that the function which goes first in the call stack will come out last & vice versa
+
+
+Summary: 
+1. JS creates Global excution context 
+2. Next it creates memory phase
+3. Memory phase - In this phase,the variables are set to undefined until the execution phase(next phase) and the functions are set to their definitions.
+4. Next it creates the execution phase
+5. Execution phase - In this phase,the variables are initialsed to give values and when the functions are called,it creates a memory phase and execution phase for the function just like the main one.
+
+For better overview refer to your own notes of Namaste JS by Akshay Saini
