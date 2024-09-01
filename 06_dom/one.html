@@ -1,0 +1,52 @@
+<!-- Windows => Document => HTML => Every element is treated as a node in dom. A tree like structure is made in order to manipulate & understand the DOM.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    
+    <div>
+        <h1 id="title" class="heading">DOM Learning <span style="display: none;">test text</span></h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<!-- innerText:- Bss vo dikhata hai jo hume screen m dikhega
+textContent:- Vo content jo pura html tag ke andar hai bhale hi uski styling hidden ho ya visible ho
+innerHTML:- This selects the entire html element as well
+-->
+<!-- 
+document.querySelector('h2') => this selects the 1st h2 element & returns it. -->
+
+<!-- 
+Nodelist is the result of querySelectorAll. It is similar to array but it does not contain the same methods & properties of arrays 
+Even if we get only one element in the NodeList then too the foundations remain same of accessing it using the indexes of the array. 
+Since NodeList is not array so we do not have the functionality of maps, reduce, filter, etc. In order to loop over the NodeList we just have to use the forEach loop since only this is available in NodeList.
+If we have to use the arrays methods then just convert the NodeList into the arrays and then apply all the methods.
+-->
+
+<!-- By using the document.getElementByClassName gives us the HTML collection and not the NodeList or the element/tag 
+Also it does not have any looping mechanism.
+To loop over the HTMLCOllection we have to first convert it into the arrays and then we can easily use the looping functionalities. 
+To convert the HTMLCollection into the arrays we have Array.from(). Inside from we have to specify that which htmlcollection is to be converted into the array
+--> 
