@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Part 2</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <div class="parent">
+        <div class="four">Monday</div>
+        <div class="four">Tuesday</div>
+        <div class="four">Wednesday</div>
+        <div class="four">Thursday</div>
+    </div>
+
+    <script>
+        const parent = document.querySelector('.parent')
+        console.log(parent);
+
+        //parent.children property is used to find out how many children are there inside the parent. This gives us the HTML Collection. 
+        console.log(parent.children);
+        
+        // console.log(parent.children[1].innerText);
+        
+        //We cannot iterate the HTML Collection using the special loops but we can still use the classic for loop for the iterations over the HTML Collection
+
+        for (let i = 0; i < parent.children.length; i++) {
+            // console.log(parent.children[i].innerText);
+            
+        }
+        parent.children[1].style.color = "orange"
+
+        //We have a property to print the first child of the html collection & also the last child of the html collection
+
+        // console.log(parent.firstElementChild);
+        // console.log(parent.lastElementChild);
+        
+        
+        const dayOne = document.querySelector('.four')
+        console.log(dayOne);
+
+        //To go back to the parent element we can use the below property: 
+        console.log(dayOne.parentElement);
+
+        //To go to the next element sibling we can use the below property: 
+        console.log(dayOne.nextElementSibling);
+        
+
+        //This gives the nodelist which contains info about all the nodes present inside the dom structure.
+        //Also any line break (like enter) is counted as the single node in the DOM, text comment is represented as the node in the DOM. In this way the browser creates a really complex dom structure & stores all the elements, & minute details as a node in the dom. 
+        console.log("Nodes: ", parent.childNodes);
+        
+        //Every element is individually a NodeList inside the DOM model. 
+
+        //Traversing the entire dom to select a particular element can be a costly operation so we can use the above properties to save the complexity of the operation of traversing. 
+        
+    </script>
+</body>
+</html>
