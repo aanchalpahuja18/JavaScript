@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Part 4</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langname){
+        const li = document.createElement("li")
+        li.innerHTML = langname
+        const ul = document.querySelector('.language')
+        ul.appendChild(li)
+    }
+
+    addLanguage("Python")
+    addLanguage("Ruby")
+
+
+    //Above approach is a little time taking approach since for the innerHtml we have to traverse the entire DOM tree & then to find that particular li element in which we have to insert the innerHTML property is a bit time taking process. In small projects it is okay but in bigger projects it becomes the optimizing issue. 
+
+    //Aproach 2 - 
+    //With the below approach we save the traversing time in the tree & we directly add a child node of text into our created node which helps us to optimize our code further. 
+    function addOptiLanguage(langname){
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(langname))
+        const ul = document.querySelector(".language")
+        ul.appendChild(li)
+    }
+
+    addOptiLanguage("Optimal Language")
+
+
+    //Editting the values & nodes in the DOM
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    
+    // secondLang.innerHTML('Typescript') => This method is again a time taking method in which we have to traverse the entire DOM tree
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+
+
+    //Aproach - 2:
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = `<li>Swift</li>`
+
+
+    //remove elements from the DOM:
+
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+</html>
