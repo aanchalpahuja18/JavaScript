@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 | BMI Calculator</title>
+    <style>
+        .body{
+            text-align: center;
+            background-color: #212121;
+            color: #fff;
+        }
+        .container{
+            border: 2px solid #fff;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body class="body">
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <form>
+            <p><label Height in cm for="height">Height in cm <input type="text" name="" id="height"></label></p>
+            <p><label Weight in cm for="weight">Weight in cm <input type="text" name="" id="weight"></label></p>
+            <button style="padding: 12px; border-radius: 10%; font-size: large;">Calculate</button> <br>
+            <div id="results"></div>
+            <div id="weight-guide">
+                <h2>BMI Weight Guide</h2>
+                <p>Under Weight => Less than 18.6</p>
+                <p>Normal Range => Between 18.6 & 24.9</p>
+                <p>Over Weight => Greater than 24.9</p>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="bmi.js"></script>
+</html>
+
+<!-- Whenever the form is submitted it is submitted in 2 ways either the get type or the post type & the values are sent to the server by default.
+So in this project we are first selecting the form element so that we can prevent the default behaviour of the form submitting everything to the server. 
+We are selecting the form element as we have a button which is of submit type so normal click event won't work there. -->
