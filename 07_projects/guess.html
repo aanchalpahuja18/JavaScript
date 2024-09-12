@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 4 | Guess the Number</title>
+    <style>
+        #wrapper{
+            border: 2px solid black;
+        }
+        body{
+            text-align: center;
+        }
+        .guess{
+            padding: 12px;
+            background-color: #000;
+            color: white;
+            font-size: 20px;
+            border-radius: 12px;
+            border: 2px solid black;
+        }
+        #guessField{
+            padding: 8px;
+            border-radius: 12px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body style="background-color: grey; color: #000;">
+    <div id="wrapper">
+        <h1>Number Guessing Game</h1>
+        <p>Try & Guess a number between 1 and 100</p>
+        <p>You have 10 attempts to guess the correct number</p>
+        <br>
+        <form>
+            <label for="guessField"><h3>Guess a number</h3></label>
+            <input type="text" id="guessField" class="guessField"> <br> <br>
+            <input type="submit" id="subt" value="Submit Guess" class="guess">
+
+        </form>
+
+        <div class="resultParas">
+            <p>Previous Guesses: <span class="guesses"></span></p>
+            <p>Guesses Remaining: <span class="lastResult">10</span></p>
+            <p class="lowOrHi"></p>
+        </div>
+    </div>
+</body>
+<script src="guess.js"></script>
+</html>
