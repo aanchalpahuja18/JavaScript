@@ -1,0 +1,54 @@
+JS is the old school synchronous language: which means it executes the code one by one & in a order.
+JS is the single threaded which means on a single thread the entire code will be executed. This makes the language slow comparatively. It won't make us feel that it is a single threaded language.
+
+If JS engine is executing alone then it may choke the execution context.
+JS always comes with a runtime environment like browser, nodejs which makes the language fast & avoids the issue with standalone JS engine 
+
+Above is the default behavious of JS.
+
+We also have an execution context in JS into which entire code gets executed. 
+It executes one line of code at a time.
+
+
+Each operation waits for the last one to complete before execution. 
+
+
+Blocking Code vs Non-Blocking Code
+
+Blocking Code: 
+Block the flow of the program
+Reads file synchronously
+
+Here the flow of the program is stopped until the required code goes, executes & comes back
+
+
+Non-Blocking Code: 
+Does not block the execution
+Reads file asynchronously
+
+Here the flow of the program runs as usual & the required code gets executed side by side & when it comes it notifies that its execution is completed.
+So the flow of the program here is not interrupted by additional code
+
+Which is better from above?
+It totally depends on the use case.
+
+Many may think that Non-blocking code is better since the language doesn't have to wait for the additional code to execute.
+But if we have a user & we want to store its details to our DB & at that time if we use non-blocking code then even if the details of the user is not yet updated to the DB there will be a msg shown to the user that he/she has been registered successfully.
+
+So in this case the blocking code is preferred.
+
+Therefore it totally depends on the use case when to use which code.
+
+JS engine is composed of just 2 things: Call Stack & Memory heap
+
+It is usually attached to the browser runtime environment which further provides it with Web API (from which we can get access to DOM)
+
+Function residing inside our call stack wants to use the utility of setTimeout which is inside the WebApi.
+setTimeout basically ye provide krta hai ki tum baki saara kaam krte rho bss itne time ke baad ye code ko execute kr dena.
+Fir setTimeout uss code ko register call back ke andar deta hai it records all the events jiske baad uss code ko execute krna hoga.
+
+Ab register call back saara code block task queue ko deta hai jo further call stack ko dega.
+Because jb humne setTimeoutko call kiya tha to vo code call stack se bhr nikal gya tha usko vapas lane ka liye we have above procedure.
+
+We also have a concept of fetch() which comes with promises jo btata hai ki koi kaam ho gya ho to bhi btana or nhi hua ho to bhi btana.
+To for that we have stretched our task queue into a high priority queue jo humare promise vale calls ko store krti hai fir call stack me add kr deti hai. 
