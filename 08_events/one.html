@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JS</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script> 
+
+  //Below can be used but it comes with less functionality & hence using events gives us more functionalities & also a propagation ability.
+//   document.getElementById('owl').onclick = function(){
+//     alert("Owl Clicked")
+//   }
+
+    //Below in the addEventListener method there are 3 parameters to the function:
+    //1. The event which we have to perform,
+    //2. The function which would be invoked once the 1st parameter thing have been performed by the user.
+    //3. false (This parameter has the default value of false.) In some applications we have to specify it since the app may be dependant only on the 3rd parameter that is true/false
+
+
+//   document.getElementById('owl').addEventListener('click', function () {
+//    alert("Owl Clicked Again!") 
+//   })
+
+
+  //attachEvent() => This was used in older times when apps used to run on internet explorer
+  //jquery => It had .on which would work similar to addEventListener
+
+
+  //Study about below:
+  // type (Keyboard events / Mouse Events, etc. ), timestamp, defaultPrevented (This is used to prevent the default behaviour of some element/tag)
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+//     document.getElementById('owl').addEventListener('click', function (e) {
+//         console.log(e);
+        
+//   })
+
+
+//Event Propagation is further divided into Event Bubbling (which comes by setting the 3rd parameter as false) & Event Capturing (by setting the 3rd parameter as true)
+
+//Event Bubbling: Here when the parameter is set to false or by default it is false then we get the output as a bubble which means it travels from the child to the parent. Hence the output is like this:
+//Owl Clicked
+// Inside the image!!
+// document.getElementById('images').addEventListener('click', function (e) {
+//         console.log("Inside the image!!")
+//   }, false)
+
+//   document.getElementById('owl').addEventListener('click', function (e) {
+//         console.log("Owl Clicked");
+        
+//   }, false)
+
+  
+//Event Capturing: Here when the parameter is set to true then we get the output as a captured one which means it travels from the parent to the child. Hence the output is like this:
+// Inside the image!!
+//Owl Clicked
+  // document.getElementById('images').addEventListener('click', function (e) {
+  //       console.log("Inside the image!!")
+  // }, true)
+
+  // document.getElementById('owl').addEventListener('click', function (e) {
+  //       console.log("Owl Clicked");
+        
+  // }, true)
+
+  // //All the above happens since owl is a child of the ul (which is also the targetted id) on which a separate event listener is added; That is the reason this type of outputs we get!
+
+  // //Also if we want to stop the propagation of the event by default behaviour we use e.stopPropagation(). This will stop the event propagation & hence will give only 1 output.
+
+  // document.getElementById('google').addEventListener('click', function(e){
+  //   console.log("Google clicked");
+    
+  //   e.preventDefault()
+  //   e.stopPropagation()
+  // }, false)
+
+
+  //Activity:
+  document.getElementById("images").addEventListener("click", function(e){
+    // removeIt.remove() => METHOD 1
+
+    //If we click on li its parent is ul & then the entire screen ud jaegi but we don't want that to happen so we will apply some checks
+
+    if(e.target.tagName === 'IMG'){
+      console.log(e.target.tagName);
+      
+      let removeIt = e.target.parentNode;
+      removeIt.parentNode.removeChild(removeIt)
+    }
+    
+  })
+</script>
+</html>
+
+<!-- 
+//Notes
+
+In JS Every event is run sequentially.
+Events are invoked on a certain activity.
+We get an event object by default attached to wherever we are using EventListeners.
+This event object provides us various methods but it majorly provides Browser & Environment methods.  -->
+
+
+<!-- onclick="alert('Owl')"
+Above is difficult when things come to scalability. It faces the scalability issues.  
+-->
