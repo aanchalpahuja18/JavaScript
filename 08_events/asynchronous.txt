@@ -52,3 +52,5 @@ Because jb humne setTimeoutko call kiya tha to vo code call stack se bhr nikal g
 
 We also have a concept of fetch() which comes with promises jo btata hai ki koi kaam ho gya ho to bhi btana or nhi hua ho to bhi btana.
 To for that we have stretched our task queue into a high priority queue jo humare promise vale calls ko store krti hai fir call stack me add kr deti hai. 
+
+JS engine is asynchronous but it comes up with runtime environment which has a async nature which eventually makes JS async language. 
