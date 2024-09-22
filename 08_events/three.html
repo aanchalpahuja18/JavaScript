@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Nature of JS</title>
+</head>
+<body>
+    <h1>Async Nature of JS | Part 2</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHi = function(hi){
+        console.log("Aanchal");
+        console.log("pahuja", Date.now());
+        console.log(hi, "Yo");
+        
+    }
+    const Intervalid = setInterval(sayHi, 1000, "Hii")
+    clearInterval(Intervalid)
+
+
+
+    //Task 1 - 
+    let name
+    document.getElementById('start').addEventListener("click", function(){
+        name = setInterval(function(){
+            console.log("Aanchal Pahuja");
+        }, 2000)
+    })
+
+
+    document.getElementById('stop').addEventListener("click", function(){
+        clearInterval(name)
+        console.log("Stopped");
+    })
+</script>
+</html>
+<!-- 
+
+Notes:
+
+We have 3 parameters to the setInterval() => 1. is the handler/callback function which specifies what we have to do within each interval time.
+2. is the time unit during which we have to repeat the call of the callback
+3. is the parameter which we can pass to the reference which is passed inside the setInterval() 
+
+We also have a clearInterval() which takes the reference of the setInterval & is used to stop the execution of the setInterval()
+-->
