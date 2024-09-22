@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Feature</title>
+</head>
+<body>
+    <h1>Async Nature of JS</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+// setTimeout(function() {
+//     console.log("Aanchal Pahuja");
+// }, 2000)
+
+const sayAanchal = function () {
+    console.log("Aanchal Pahuja");
+}
+
+setTimeout(sayAanchal, 2000)
+
+const changeText = function(){
+    document.querySelector('h1').innerHTML = "JS is Magical!"
+}
+
+const changeMe = setTimeout(changeText, 3000)
+
+
+document.querySelector('#stop').addEventListener('click', function(){
+    clearInterval(changeMe)
+    console.log("Stopped!");
+    
+})
+
+
+</script>
+
+<!-- 
+Notes:
+
+setTimeout, setInterval are not part of core JS & it can be accessed via API which is present in the browser's environment & is available to us via the window object.
+
+setTimeout works on the basis of a timeout which means ki aap mujhe itni der ka time do uske baad i'll complete your specified task. Ye bs ek hi baar vo specified work ko krega.
+
+
+setTimeout requires a handler (handler, callback, functions are almost the same ) handler is basically a function/callback without having its own name. It can also happen that a function is written somewhere else & we are just giving its reference in the space of handler. That is also doing the same thing.
+
+2nd parameter is of a timer value which is in the number format.
+
+clearTimeour is used when we want to stop the event to happen inside the setTimeout function before its time expires. 
+It just takes the reference of the setTimeout() 
+
+
+A callback is a function passed as an argument to another function.
+
+-->
+</html>
