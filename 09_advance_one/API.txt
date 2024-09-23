@@ -1,0 +1,15 @@
+API - Application Programming Interface
+It is the communication medium/channel between 2 systems (they may be written either in java, php or java, ruby)
+To establish a communication between both the systems we use APIs
+
+We have 2 majorly used APIs as api.github.com/users/aanchalpahuja & randomuser.me
+
+Since API may be difficult to read & understand we have further an easy tool to do so which is the JSON formatter.
+
+All the APIs contain data in the object format.
+
+fetch() is the newer version from which we can request the API
+
+Earlier we would use XMLHTTP request to request the API & make a call.
+
+XMLHTTP request it is completely written in AJAX.
