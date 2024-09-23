@@ -42,3 +42,12 @@ Callback will have 2 parameters resolve & reject. resolve means promise is fulfi
 then() is called on the promise object and provides a callback function that will be executed when the Promise is resolved
 
 The .finally() method is called when the Promise is settled (either resolved or rejected
+
+promise.all
+yes this is also available, kuch reading aap b kro.
+
+The Fetch API provides an interface for fetching resources (including across the network). It is a more powerful and flexible replacement for XMLHttpRequest.
+
+The fetch() method takes one mandatory argument, the path to the resource you want to fetch. It returns a Promise that resolves to the Response to that request — as soon as the server responds with headers — even if the server response is an HTTP error status. You can also optionally pass in an init options object as the second argument (see Request).
+
+fetch() also takes another parameter ( with the url ) which can pass objects & other standard things related to fetch()
