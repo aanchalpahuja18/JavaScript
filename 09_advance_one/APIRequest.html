@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+</head>
+<body style="background-color: #212121; color: wheat;">
+    0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete.
+</body>
+<script>
+    //we have status codes in XMLHttpRequest() which tells us the status of every state we are in the API calling. These codes are represented using 0 to 4 digits & these are known as the readyState codes. 
+
+    //to use the XMLHTTP request we have to first create an object out of it.
+    // XMLHttpRequest() => this contains all the methods inside it namely open(), send(), etc.
+
+    const xhr =  new XMLHttpRequest()
+
+    //Now to make a request to the API we will use the open() from XMLHttpRequest()
+
+    //open() => takes 2 parameters, 1st the method to the api which is (get, post, put, patch) & 2nd the url to which we have to make a call.
+
+    xhr.open('GET', 'https://api.github.com/users/aanchalpahuja18')
+    //But by only specifying above wont make a call to the API we also have to use the send() to make an actual call to the API
+
+    //to print the current ready state of the url we have:
+
+    // console.log(xhr.readyState);
+
+    // we can also track & monitor the api url continuously by using:
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        //readyState = 4 means that everything is okay & we have received the data. The object/json can be obtained with the help of responseText. 
+        if(xhr.readyState === 4){
+            const data =JSON.parse(this.responseText)
+
+            //Most of the time whenever we get the response from the url it is in the string format & not object. 
+            //Since the response is in the string format & we have to work with the JSON format we can just use the below method:
+            //JSON.parse(response) => this will convert the string response into json & we can easily access the properties of the object further. 
+            console.log(typeof data);
+            console.log(data.followers);
+            
+            
+        }
+    }
+    
+    xhr.send()
+
+
+
+</script>
+</html>
+
+<!-- 
+
+Notes
+
+console.log() & many other APIs like document are not the core part of js. 
+Core JS has only basic arithmetic operations, functions, loops, are present.
+
+console.log() => It is the debugging tool/dev tool of the browser. It is injected by the runtime environment of JS & is not the core part available inside JS. 
+
+JS is started by runtime environment like NodeJS/browser. 
+NodeJS is itself an implementation of the V8 engine.
+V8 engine is built on C++ & JS also runs over C++ language.
+
+V8 engine gives us some debugging tools/ API access, etc.
+console.log() is also available in v8 only. Actual implementation is there inside the V8 which provides JS a runtime environment. 
+
+V8 has the entire code available inside github.com/v8/v8
+
+console.log() comes from the d8 folder which is inside github.com/v8/v8
+
+Full JS is the wrapper over the C++ programming language. 
+
+V8 is the Google's open source JS engine 
+
+console.log() has a WriteTOFile() which tells the space in which we have to print our statements similar to cout in cpp
+It basically informs the browser that inside inspect we have a console window into which we have to print the statements mentioned inside the console.log()
+-->
+
