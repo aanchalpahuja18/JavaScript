@@ -51,3 +51,6 @@ The Fetch API provides an interface for fetching resources (including across the
 The fetch() method takes one mandatory argument, the path to the resource you want to fetch. It returns a Promise that resolves to the Response to that request — as soon as the server responds with headers — even if the server response is an HTTP error status. You can also optionally pass in an init options object as the second argument (see Request).
 
 fetch() also takes another parameter ( with the url ) which can pass objects & other standard things related to fetch()
+
+
+For detailed info related to fetch watch: 41st video of JS Series
