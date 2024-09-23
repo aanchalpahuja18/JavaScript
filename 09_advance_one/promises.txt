@@ -1,0 +1,44 @@
+Promises represent the task which is going to be completed in the future.
+It represents the success or failure of that task.
+
+A Promise is in one of these states:
+
+pending: initial state, neither fulfilled nor rejected.
+fulfilled: meaning that the operation was completed successfully.
+rejected: meaning that the operation failed.
+
+Promises are consumed at max times.
+
+But before consuming the promises we should know how to create them
+
+Promises are the objects & they have to be created as an instance of the Promise object present & introduced in the ES6 feature of JS.
+
+
+const promiseOne = new Promise();
+
+
+Before promises we also had the DBs & we wanted to do the async operations so at that time 2 libraries namely Q & Bluebird.
+
+BlueBird on the other hand used to give similar functionalities like fetch, then, catch, etc. to the developers & hence it was eventually integrated with the core JS.
+
+After that when Node.js came it provided the native support of Promises which proved to be faster & also a little extra memory consumption was there. So now we use Promises provided to us by the Nodejs library & not BlueBird.
+
+Before understanding the consumption it is very good to learn how to create the Promises which will make us clear about how it works in BTS.
+
+Promises takes a callback inside it which further helps to reduce the callback hell (which is callback inside callback inside callback, etc.)
+
+Callback will have 2 parameters resolve & reject. resolve means promise is fulfilled & reject means it is a failure
+
+// .then() has a straight relation with our resolve keyword. 
+//.then() also has a callback which returns the value which it gets from the original promise created. 
+
+//We also have to connect the resolve() & .then since once the task is completed then only resolve will tell that okay now the promise is consumed & have been used properly. 
+
+//To establish a connection between resolve & .then we have to call resolve() inside our async task.
+
+//resolve() also sets many parameters & it also gives us the ability to pass some values which we can further take inside the .then()
+
+
+then() is called on the promise object and provides a callback function that will be executed when the Promise is resolved
+
+The .finally() method is called when the Promise is settled (either resolved or rejected
