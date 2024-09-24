@@ -1,7 +1,7 @@
 //1. Object Literal: An object literal is a list of name:value pairs inside curly braces {}.
 
 const user = {
-    username: "hitesh",
+    username: "Aanchal",
     loginCount: 8,
     signedIn: true,
 
@@ -57,13 +57,13 @@ function user(username, loginCount, isLoggedIn){
 
 //By using below code we will overwrite the values of userTwo into userOne whenever it would be called. And even the below code would give us a lot of unnecessary previous info which we don't want it to use now. 
 
-// const userOne =  user("hitesh", 12, true)
+// const userOne =  user("Aanchal", 12, true)
 // const userTwo =  user("ChaiAurCode", 11, false)
 
 
 //To have a new info of the entire instance & to control over the values passed into it we will use new keyword so that an wntire new independant instance is available to use. 
 
-const userOne = new user("hitesh", 12, true)
+const userOne = new user("Aanchal", 12, true)
 const userTwo = new user("ChaiAurCode", 11, false)
 //constructor property is the reference to our own function/object
 console.log(userOne.constructor);
