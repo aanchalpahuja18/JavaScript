@@ -61,8 +61,6 @@ function user(username, loginCount, isLoggedIn){
 // const userTwo =  user("ChaiAurCode", 11, false)
 
 
-
-
 //To have a new info of the entire instance & to control over the values passed into it we will use new keyword so that an wntire new independant instance is available to use. 
 
 const userOne = new user("hitesh", 12, true)
